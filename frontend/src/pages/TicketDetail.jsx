@@ -18,7 +18,7 @@ const TicketDetail = () => {
   const fetchTicket = async () => {
     try {
       setLoading(true);
-      const res = await axios.get('/api/tickets');
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/tickets`);
       const foundTicket = res.data.data.find(t => t._id === id);
       if (foundTicket) {
         setTicket(foundTicket);
@@ -35,7 +35,7 @@ const TicketDetail = () => {
   const handleStatusChange = async (newStatus) => {
     try {
       setUpdating(true);
-      const res = await axios.patch(`/api/tickets/${id}`, { status: newStatus });
+      const res = await axios.patch(`${import.meta.env.VITE_API_URL}/tickets/${id}`, { status: newStatus });
       setTicket(res.data.data);
       setUpdating(false);
     } catch (err) {

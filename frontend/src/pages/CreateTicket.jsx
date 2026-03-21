@@ -27,7 +27,7 @@ const CreateTicket = () => {
     setError('');
 
     try {
-      await axios.post('/api/tickets', formData);
+      await axios.post(`${import.meta.env.VITE_API_URL}/tickets`, formData);
       setLoading(false);
       navigate('/');
     } catch (err) {
