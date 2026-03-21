@@ -4,9 +4,7 @@ import {
   updateTicketStatusService,
 } from '../services/ticketService.js';
 
-// @desc    Create a new ticket
-// @route   POST /api/tickets
-// @access  Public
+
 export const createTicket = async (req, res) => {
   try {
     const ticket = await createTicketService(req.body);
@@ -30,9 +28,7 @@ export const createTicket = async (req, res) => {
   }
 };
 
-// @desc    Get all tickets
-// @route   GET /api/tickets
-// @access  Public
+
 export const getTickets = async (req, res) => {
   try {
     const result = await getTicketsService(req.query);
@@ -52,9 +48,7 @@ export const getTickets = async (req, res) => {
   }
 };
 
-// @desc    Update ticket status
-// @route   PATCH /api/tickets/:id
-// @access  Public
+
 export const updateTicketStatus = async (req, res) => {
   try {
     const { status } = req.body;
