@@ -2,12 +2,12 @@
 
 SupportHub is a premium, full-stack web application designed for support teams and merchants to efficiently create, manage, and resolve customer support inquiries. 
 
-The application features a modern glassmorphism aesthetic, real-time analytics, paginated data loading, and advanced sorting capabilities.
+The application features a modern glassmorphism aesthetic, real-time analytics, and advanced sorting capabilities.
 
 ## 🚀 Key Features
 
 - **Interactive Dashboard**: Get a high-level overview of support metrics (Total, Active, and Resolved tickets) alongside a quick view of recent inquiries.
-- **Ticket List & Data Management**: A dedicated ticket viewing page featuring backend pagination for performance at scale.
+- **Ticket List & Data Management**: A dedicated ticket viewing page for performance and scale.
 - **Advanced Sorting Capabilities**: 
   - Sort by **Recency** (Newest/Oldest).
   - Sort by **Severity/Priority** (High to Low, or Low to High), backed by a robust customized MongoDB aggregation pipeline.
@@ -30,14 +30,14 @@ The application features a modern glassmorphism aesthetic, real-time analytics, 
 ## 🏗️ Architecture
 
 ### Frontend Architecture
-- **Component-Driven**: The UI is modularized (`Sidebar`, `TicketCard`, `TicketTable`), making the codebase DRY and highly maintainable.
+- **Component-Driven**: The UI is modularized (`Sidebar`, `TicketCard`, `TicketForm`, `TicketTable`), making the codebase DRY and highly maintainable.
 - **State Management**: Utilizes React's native `useState` and `useEffect` paired with Axios for asynchronous data fetching. 
 - **Routing**: `react-router-dom` delivers a seamless Single Page Application (SPA) experience.
 
 ### Backend Architecture (MVC Pattern)
 - **Routes (`/routes`)**: Define the API endpoints (e.g., `/api/tickets`) and route them to corresponding controllers.
 - **Controllers (`/controllers`)**: Parse incoming HTTP requests, extract payloads/query parameters, and send HTTP responses.
-- **Services (`/services`)**: Contain isolated, core business logic and direct database queries (like parsing pagination and executing complex `$switch` pipelines for accurate priority sorting). This decoupled approach makes the backend robust and easily scalable.
+- **Services (`/services`)**: Contain isolated, core business logic and direct database queries (like executing complex `$switch` pipelines for accurate priority sorting). This decoupled approach makes the backend robust and easily scalable.
 - **Models (`/models`)**: Mongoose schemas enforcing strict validation on MongoDB records.
 
 ## ⚙️ How to Run Locally
@@ -60,7 +60,7 @@ npm install
 node index.js
 ```
 *The backend API will be available at `http://localhost:5000`*
-*(Note: Use `npm run start` or `node index.js`. Since nodemon isn't configured by default, manual restarts are needed if you actively edit backend files).*
+*Use `npm run start` or `node index.js` to start the server*
 
 ### 3. Start the Frontend
 Open a new terminal window:
@@ -84,7 +84,5 @@ npm run dev
 | Method | Endpoint | Description | Query Params |
 |--------|----------|-------------|--------------|
 | `POST` | `/api/tickets` | Create a new ticket | - |
-| `GET`  | `/api/tickets` | Get all tickets | `page`, `limit`, `sortBy` (createdAt/priority), `order` (asc/desc) |
+| `GET`  | `/api/tickets` | Get all tickets | `sortBy` (createdAt/priority), `order` (asc/desc) |
 | `PATCH`| `/api/tickets/:id` | Update ticket status | Payload: `{ status: 'RESOLVED' }` |
-
-*(Note: If `page` and `limit` are not provided to the GET endpoint, it safely falls back to returning all non-paginated tickets to support global system metrics on the dashboard).*
