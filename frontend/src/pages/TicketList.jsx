@@ -59,10 +59,10 @@ const TicketList = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#f0f4ff] via-[#f8f9fa] to-[#f4f0ff] p-8">
+    <div className="min-h-screen bg-gradient-to-br from-[#f0f4ff] via-[#f8f9fa] to-[#f4f0ff] p-4 md:p-8">
       
       {/* Header */}
-      <div className="flex justify-between items-center mb-8">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 gap-4">
         <div>
           <h1 className="text-4xl font-bold">All Tickets</h1>
           <p className="text-gray-500">Manage your support tickets</p>

@@ -98,9 +98,9 @@ const TicketDetail = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#f0f4ff] via-[#f8f9fa] to-[#f4f0ff] p-8 w-full relative overflow-y-auto">
+    <div className="min-h-screen bg-gradient-to-br from-[#f0f4ff] via-[#f8f9fa] to-[#f4f0ff] p-4 md:p-8 w-full relative overflow-y-auto">
       {/* Background Decor */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-indigo-500/[0.04] rounded-full blur-3xl -z-10"></div>
+      <div className="hidden md:block absolute top-0 right-0 w-[500px] h-[500px] bg-indigo-500/[0.04] rounded-full blur-3xl -z-10"></div>
       
       <div className="max-w-4xl mx-auto z-10 pt-2">
         <button onClick={() => navigate('/')} className="inline-flex items-center text-gray-500 hover:text-indigo-600 mb-8 transition-colors font-bold px-4 py-2 bg-white/50 backdrop-blur-md rounded-xl shadow-sm border border-white hover:shadow-md">
@@ -109,8 +109,8 @@ const TicketDetail = () => {
         
         <div className="bg-white/70 backdrop-blur-xl rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white overflow-hidden">
           {/* Header Section */}
-          <div className="p-8 md:p-10 border-b border-gray-100/80 bg-white/40">
-            <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-6 mb-6">
+          <div className="p-6 md:p-10 border-b border-gray-100/80 bg-white/40">
+            <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-4 md:gap-6 mb-6">
               <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900 leading-tight">{ticket.subject}</h1>
               
               <div className="flex flex-wrap items-center gap-3 shrink-0">
@@ -137,7 +137,7 @@ const TicketDetail = () => {
           </div>
 
           {/* Message Section */}
-          <div className="p-8 md:p-10 relative">
+          <div className="p-6 md:p-10 relative">
             <div className="absolute top-10 left-10 w-8 h-8 bg-indigo-100 rounded-full flex items-center justify-center -translate-x-12 hidden md:flex">
                 <div className="w-2 h-2 bg-indigo-500 rounded-full"></div>
             </div>
@@ -148,9 +148,9 @@ const TicketDetail = () => {
           </div>
 
           {/* Action Section */}
-          <div className="p-8 md:p-10 border-t border-gray-100/80 bg-gray-50/30">
+          <div className="p-6 md:p-10 border-t border-gray-100/80 bg-gray-50/30">
             <h3 className="text-sm font-bold text-gray-400 uppercase tracking-wider mb-5">Update Lifecycle</h3>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-col sm:flex-row flex-wrap gap-4">
               <button 
                 disabled={updating || ticket.status === 'NEW'}
                 onClick={() => handleStatusChange('NEW')}

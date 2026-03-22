@@ -56,10 +56,10 @@ const Dashboard = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#f0f4ff] via-[#f8f9fa] to-[#f4f0ff] p-8 w-full relative overflow-y-auto">
+    <div className="min-h-screen bg-gradient-to-br from-[#f0f4ff] via-[#f8f9fa] to-[#f4f0ff] p-4 md:p-8 w-full relative overflow-y-auto">
       {/* Abstract Background Elements */}
-      <div className="absolute top-0 left-0 w-full h-[400px] bg-indigo-600/[0.03] -skew-y-3 transform origin-top-left -z-10"></div>
-      <div className="absolute top-[-100px] right-[-100px] w-96 h-96 bg-purple-400/[0.08] rounded-full blur-3xl -z-10"></div>
+      <div className="hidden md:block absolute top-0 left-0 w-full h-[400px] bg-indigo-600/[0.03] -skew-y-3 transform origin-top-left -z-10"></div>
+      <div className="hidden md:block absolute top-[-100px] right-[-100px] w-96 h-96 bg-purple-400/[0.08] rounded-full blur-3xl -z-10"></div>
       
       <div className="max-w-7xl mx-auto z-10">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-4">
@@ -114,7 +114,7 @@ const Dashboard = () => {
             </span>
           </h2>
           {tickets.length === 0 ? (
-            <div className="bg-white/70 backdrop-blur-xl rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white p-16 text-center text-gray-500">
+            <div className="bg-white/70 backdrop-blur-xl rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white p-6 sm:p-16 text-center text-gray-500">
               <div className="inline-flex justify-center items-center w-16 h-16 rounded-full bg-gray-50 mb-4">
                 <Ticket className="w-8 h-8 text-gray-400" />
               </div>

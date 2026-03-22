@@ -37,9 +37,9 @@ const CreateTicket = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#f0f4ff] via-[#f8f9fa] to-[#f4f0ff] p-8 w-full relative overflow-y-auto">
+    <div className="min-h-screen bg-gradient-to-br from-[#f0f4ff] via-[#f8f9fa] to-[#f4f0ff] p-4 md:p-8 w-full relative overflow-y-auto">
       {/* Abstract Background Elements */}
-      <div className="absolute top-[-100px] left-[-100px] w-96 h-96 bg-indigo-400/[0.08] rounded-full blur-3xl -z-10"></div>
+      <div className="hidden md:block absolute top-[-100px] left-[-100px] w-96 h-96 bg-indigo-400/[0.08] rounded-full blur-3xl -z-10"></div>
       
       <div className="max-w-3xl mx-auto z-10 pt-4">
         <div className="mb-8">
@@ -47,7 +47,7 @@ const CreateTicket = () => {
           <p className="text-gray-500 mt-2 font-medium">Please provide detailed information to help us resolve your issue.</p>
         </div>
         
-        <div className="bg-white/70 backdrop-blur-xl rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white p-10">
+        <div className="bg-white/70 backdrop-blur-xl rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white p-6 md:p-10">
           {error && (
             <div className="mb-8 p-4 bg-red-50 text-red-700 rounded-2xl border border-red-100 flex items-center shadow-sm">
               <AlertCircle className="w-5 h-5 mr-3 text-red-500" />
